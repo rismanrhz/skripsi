@@ -56,10 +56,6 @@
                 <td>asdasd</td>
             </tr>
             <tr>
-                <td>Telepon</td>
-                <td>asdasdas</td>
-            </tr>
-            <tr>
                 <td>Password</td>
                 <td>asdasd</td>
             </tr>
@@ -95,12 +91,8 @@
                     <input type="email" name="email" class="form-control" id="email" value="{{old('email', $pengguna->email) }}" required>
                 </div>
                 <div class="form-group">
-                    <label for="telepon">Telepon:</label>
-                    <input type="text" name="telepon" class="form-control" id="telepon" value="{{old('telepon', $pengguna->telepon) }}" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password (Kosongkan jika tidak ingin mengubah):</label>
-                    <input type="password" name="password" class="form-control" id="password" value="{{old('password', $pengguna->password) }}">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" class="form-control" id="password" value="{{old('password', $pengguna->password) }}" required>
                 </div>  
                 <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
             </form>

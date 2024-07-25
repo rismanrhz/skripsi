@@ -341,15 +341,6 @@
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
                                     </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="phone" class="form-label">Telepon</label>
-                                            <input type="text" class="form-control" id="phone" name="telepon" placeholder="08199987262" >
-                                            @error('telepon')
-                                            <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary mb-3">Submit</button><br>
                                 <a href="{{ route('pengguna') }}" class="btn btn-secondary">Cancel</a>

@@ -23,7 +23,6 @@
                                 <th>Nama Depan</th>
                                 <th>Nama Belakang</th>
                                 <th>Email</th>
-                                <th>Telepon</th>
                                 <th>Password</th>
                                 <th>Aksi</th>
                             </tr>
@@ -34,7 +33,6 @@
                                     <td>{{ $data->nama_depan }}</td>
                                     <td>{{ $data->nama_belakang }}</td>
                                     <td>{{ $data->email }}</td>
-                                    <td>{{ $data->telepon }}</td>
                                     <td>{{ $data->password }}</td>
                                     <td>
                                         <form onsubmit="return confirm('Are you sure? ');" action="{{ route('pengguna.destroy', $data->id) }}" method="POST">

@@ -22,9 +22,8 @@
                             <tr>
                                 <th>Gambar</th>
                                 <th>Nama Restoran</th>
-                                <th>Alamat</th>
-                                <th>Latitude</th>
-                                <th>Longitude</th>
+                                <th>Kecamatan</th>
+                                <th>Detail Alamat</th>
                                 <th>Jam Buka</th>
                                 <th>Rating</th>
                                 <th>Aksi</th>
@@ -37,9 +36,8 @@
                                         <img src="{{asset('resto/'.$data->image)}}" alt="{{$data->image}}" width="100%">
                                     </td>
                                     <td>{{ $data->nama }}</td>
-                                    <td>{{ $data->alamat }}</td>
-                                    <td>{{ $data->latitude }}</td>
-                                    <td>{{ $data->longitude }}</td>
+                                    <td>{{ $data->kecamatan }}</td>
+                                    <td>{{ $data->detail_alamat }}</td>
                                     <td>{{ $data->jam }}</td>
                                     <td>{{ $data->rating }}</td>
                                     <td>

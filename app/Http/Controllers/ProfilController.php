@@ -28,7 +28,6 @@ class ProfilController extends Controller
             'nama_depan' => 'required|string|min:2',
             'nama_belakang' => 'required|string',
             'email' => 'required|email',
-            'telepon' => 'required|min:5',
             'password' => 'required|min:5',
         ]);
 
@@ -40,7 +39,6 @@ class ProfilController extends Controller
             'nama_depan' => $request->nama_depan,
             'nama_belakang' => $request->nama_belakang,
             'email' => $request->email,
-            'telepon' => $request->telepon,
             'password' => $request->password
         ]);
 
@@ -59,7 +57,6 @@ class ProfilController extends Controller
             'nama_depan' => 'required|string|min:2',
             'nama_belakang' => 'required|string',
             'email' => 'required|email',
-            'telepon' => 'required|min:5',
             'password' => 'required|min:5',
         ]);
 
@@ -72,7 +69,6 @@ class ProfilController extends Controller
             'nama_depan' => $request->nama_depan,
             'nama_belakang' => $request->nama_belakang,
             'email' => $request->email,
-            'telepon' => $request->telepon,
             'password' => $request->password
         ]);
 

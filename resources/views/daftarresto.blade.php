@@ -17,13 +17,14 @@
 @section('content')
 
 <main>
-
+    <form action="{{ route('daftarresto.store',session('user')->id) }}" method="POST">
+        @csrf
         <!-- Regis Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                     <h5 class="section-title ff-secondary text-center text-primary fw-normal">Daftarkan Restomu</h5>
-                    <h1 class="mb-5">Daftar Sebagai Pemilik Resto</h1>
+                    <h1 class="mb-5">Daftar Resto Baru</h1>
                 </div>
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-6">
@@ -32,35 +33,57 @@
                                 <div class="row g-3">
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Nama Lengkap">
-                                            <label for="name">Nama Lengkap</label>
+                                            <input type="text" class="form-control" name="nama_resto" id="nama_resto" placeholder="Nama Restoran">
+                                            <label for="nama_resto">Nama Restoran</label>
+                                            @error('nama_resto')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="namaresto" class="form-control" id="namaresto" placeholder="Nama Restoran">
-                                            <label for="namaresto">Nama Restoran</label>
+                                            <select name="kecamatan" id="kecamatan" class="form-control">
+                                                <option value="">Pilih Kecamatan</option>
+                                                <option value="genteng">Genteng</option>
+                                                <option value="bubutan">Bubutan</option>
+                                            </select>
+                                            <label for="kecamatan">Kecamatan</label>
+                                            @error('kecamatan')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control"  id="jam_buka" placeholder="Jam Buka">
+                                            <label for="jam_buka">Jam Buka <small class="text-danger" style="font-size: 10px">(ex. 07.00 - 18.00)</small></label>
+                                        </div>
+                                    </div>                                    
+                                    <div class="col-6">
+                                        <div class="col-12">
+                                            <div class="form-floating">
+                                                <input type="rating" class="form-control" id="rating" placeholder="Rating">
+                                                <label for="rating">Rating<small class="text-danger" style="font-size: 10px"> (ex. 4.8)</small></label>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="telepon" placeholder="telepon">
-                                            <label for="telepon">Telepon</label>
+                                            <textarea class="form-control" name="alamat" id="alamat"></textarea>
+                                            <label for="alamat">Detail Alamat</label>
+                                            @error('alamat')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                            <label for="email">Email</label>
-                                        </div>
+                                            <label for="jam" class="form-label"> Gambar </label>
+                                            <input type="file" class="form-control" id="image" name="image" >
+                                            @error('image')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                     </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="password" class="form-control" id="password" placeholder="Password">
-                                            <label for="password">Password</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
+                                    <div class="col-12"><br>
                                         <button class="btn btn-primary w-100 py-3" type="submit">Kirim</button>
                                     </div>
                                 </div>

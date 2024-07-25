@@ -31,6 +31,7 @@
                             @error('jam')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
+
                         </div>
                         <div class="col-md-4">
                             <div class="mb-3">
@@ -58,9 +59,9 @@
                     <div class="mb-3 row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label for="jam" class="form-label"> Detail Alamat </label>
+                                <label for="detail_alamat" class="form-label"> Detail Alamat </label>
                                 <textarea name="detail_alamat" class="form-control" cols="30" rows="4"></textarea>
-                                @error('image')
+                                @error('detail_alamat')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
@@ -69,9 +70,9 @@
                     <div class="mb-3 row">
                         <div class="col-md-12">
                             <div class="mb-3">
-                                <label for="jam" class="form-label"> Gambar </label>
+                                <label for="gambar" class="form-label"> Gambar </label>
                                 <input type="file" class="form-control" id="image" name="image" >
-                                @error('image')
+                                @error('gambar')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>

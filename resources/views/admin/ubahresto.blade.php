@@ -305,100 +305,71 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="hidden" name="id" value="1">
-                                <div class="mb-3 row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="nama" class="form-label">Nama Restoran</label>
-                                            <input type="text" class="form-control" id="nama" name="nama" placeholder="Soto Kepiting"  required>
-                                            @error('nama')
-                                                <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="alamat" class="form-label">Alamat</label>
-                                            <input type="text" class="form-control" id="alamat" name="alamat" placeholder="Jl. Walikota Mustajab No. 36, Genteng, Surabaya."  required>
-                                            @error('alamat')
-                                                <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="latitude" class="form-label">Latitude</label>
-                                            <input type="text" class="form-control" id="latitude" name="latitude" placeholder="112.744128"  required>
-                                            @error('latitude')
-                                                <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="longitude" class="form-label">Longitude</label>
-                                            <input type="text" class="form-control" id="longitude" name="longitude" placeholder="-7.259959"  required>
-                                            @error('longitude')
-                                                <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <div class="col-md-6">
-                                        <label for="jam" class="form-label">Jam Buka</label>
-                                        <input type="text" class="form-control" id="jam" name="jam" placeholder="07.00 - 08.00" >
-                                        @error('jam')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="rating" class="form-label">Rating</label>
-                                            <input type="text" class="form-control" id="rating" name="rating" placeholder="4.5" >
-                                            @error('rating')
-                                                <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <div class="col-md-6">
-                                        <label for="makanan" class="form-label">Nama Makanan</label>
-                                        <input type="text" class="form-control" id="makanan" name="makanan" placeholder="Nasi Soto Original" >
-                                        @error('makanan')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="harga_makanan" class="form-label">Harga Makanan</label>
-                                            <input type="text" class="form-control" id="harga_makanan" name="harga_makanan" placeholder="25.000" >
-                                            @error('harga_makanan')
-                                                <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="mb-3 row">
-                                    <div class="col-md-6">
-                                        <label for="minuman" class="form-label">Nama Minuman</label>
-                                        <input type="text" class="form-control" id="minuman" name="minuman" placeholder="Es Teh Hangat" >
-                                        @error('minuman')
-                                            <small class="text-danger">{{ $message }}</small>
-                                        @enderror
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="harga_minuman" class="form-label">Harga Minuman</label>
-                                            <input type="text" class="form-control" id="harga_minuman" name="harga_minuman" placeholder="10.000" >
-                                            @error('harga_minuman')
-                                                <small class="text-danger">{{ $message }}</small>
-                                            @enderror
-                                        </div>
-                                    </div>
-                                </div>                          
+                    <div class="mb-3 row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="nama" class="form-label">Nama Restoran</label>
+                                <input type="text" class="form-control" id="nama" name="nama"  required>
+                                @error('nama')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-md-4">
+                            <label for="jam" class="form-label">Jam Buka</label>
+                            <input type="text" class="form-control" id="jam" name="jam" placeholder="10.00 - 23.00" >
+                            @error('jam')
+                                <small class="text-danger">{{ $message }}</small>
+                            @enderror
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="rating" class="form-label">Rating</label>
+                                <input type="number" min="1" max="5" class="form-control" id="rating" name="rating" value="1" >
+                                @error('rating')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="mb-3">
+                                <label for="kecamatan" class="form-label">Kecamatan</label>
+                                <select name="kecamatan" id="kecamatan" class="form-control">
+                                    <option value="">PILIH KECAMATAN</option>
+                                    <option value="bubutan">Bubutan</option>
+                                    <option value="genteng">Genteng</option>
+                                </select>
+                                @error('kecamatan')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="detail_alamat" class="form-label"> Detail Alamat </label>
+                                <textarea name="detail_alamat" class="form-control" cols="30" rows="4"></textarea>
+                                @error('detail_alamat')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="gambar" class="form-label"> Gambar </label>
+                                <input type="file" class="form-control" id="image" name="image" >
+                                @error('gambar')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>                        
                         </div>
                         <button type="submit" class="btn btn-primary mb-3">Submit</button><br>
                                 <a href="{{ route('resto') }}" class="btn btn-secondary">Cancel</a>

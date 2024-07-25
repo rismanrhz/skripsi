@@ -30,9 +30,12 @@ use App\Http\Controllers\DetailRestoController;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/rekomendasi', [RekomendasiController::class, 'index'])->name('rekomendasi');
 Route::get('/restoran', [MenuRestoranController::class, 'index'])->name('menurestoran');
-Route::get('/daftarresto', [DaftarRestoController::class, 'index'])->name('daftarresto');
 Route::get('/detailresto', [DetailRestoController::class, 'index'])->name('detailresto');
 Route::get('/administrator', [AdminController::class, 'index'])->name('admin');
+
+Route::get('/daftarresto', [DaftarRestoController::class, 'index'])->name('daftarresto');
+Route::post('/daftarresto/{id}', [DaftarRestoController::class, 'store'])->name('daftarresto.store');
+
 
 //Profil
 Route::get('/profil', [ProfilController::class, 'index'])->name('profil');

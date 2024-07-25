@@ -323,28 +323,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" >
-                                @error('email')
-                                    <small class="text-danger">{{ $message }}</small>
-                                @enderror
-                            </div>
                             <div class="mb-3 row">
                                 <div class="col-md-6">
-                                    <label for="password" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Password" >
-                                    @error('password')
-                                        <small class="text-danger">{{ $message }}</small>
-                                    @enderror
-                                </div>
-                                <div class="col-md-6">
                                     <div class="mb-3">
-                                        <label for="phone" class="form-label">Telepon</label>
-                                        <input type="text" class="form-control" id="phone" name="telepon" placeholder="08199987262" >
-                                        @error('telepon')
+                                        <label for="email" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" >
+                                        @error('email')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
+                                    </div>
+                                </div>
+                            
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" >
+                                            @error('password')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                     </div>
                                 </div>
                             </div>

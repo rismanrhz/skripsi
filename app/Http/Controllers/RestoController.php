@@ -18,15 +18,14 @@ class RestoController extends Controller
     public function create()
     {
         $resto = Restoran::all();
-        return view('admin/tambahresto', compact('resto'));
+        return view('admin/tambahresto');
     }
 
     public function store(Request $request){
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string|min:3',
-            'alamat' => 'required|string',
-            'latitude' => 'required|numeric',
-            'longitude' => 'required|numeric',
+            'kecamatan' => 'required|string',
+            'detail_alamat' => 'required|string',
             'jam' => 'required|string',
             'rating' => 'required|numeric',
             'image' => 'required|image|mimes:jpeg,png,jpg',
@@ -43,9 +42,8 @@ class RestoController extends Controller
         Restoran::create([
             'id_pengguna' => 1,
             'nama' => $request->nama,
-            'alamat' => $request->alamat,
-            'latitude' => $request->latitude,
-            'longitude' => $request->longitude,
+            'kecamatan' => $request->kecamatan,
+            'detail_alamat' => $request->detail_alamat,
             'jam' => $request->jam,
             'rating' => $request->rating,
             'image' => $imageName,
@@ -54,7 +52,8 @@ class RestoController extends Controller
         return redirect()->route('resto');
     }
 
-    public function edit($id) {
+    public function edit($id) 
+    {
         $resto = Restoran::find($id);
 
         return view('admin/ubahresto', compact('resto'));
@@ -64,12 +63,11 @@ class RestoController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string|min:3',
-            'alamat' => 'required|string',
-            'latitude' => 'required|numeric',
-            'longitude' => 'required|numeric',
+            'kecamatan' => 'required|string',
+            'detail_alamat' => 'required|string',
             'jam' => 'required|string',
             'rating' => 'required|numeric',
-            'image' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg',
         ]);
 
         if ($validator->fails()) {
@@ -77,14 +75,16 @@ class RestoController extends Controller
         }
 
         $resto = Restoran::find($id);
+        $imageName = time().'-'.$request->image->getClientOriginalName();
+        $request->image->move(public_path('resto'), $imageName);
         $resto->update([
+            'id_pengguna' => 1,
             'nama' => $request->nama,
-            'alamat' => $request->alamat,
-            'latitude' => $request->latitude,
-            'longitude' => $request->longitude,
+            'kecamatan' => $request->kecamatan,
+            'detail_alamat' => $request->detail_alamat,
             'jam' => $request->jam,
             'rating' => $request->rating,
-            'image' => $request->image,
+            'image' => $imageName,
         ]);
         return redirect()->route('resto');
     }
