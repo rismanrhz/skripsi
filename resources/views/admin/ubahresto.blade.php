@@ -70,13 +70,6 @@
                     <span>Kelola Resto</span>
                 </a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('pemilik')}}">
-                    <i class="fas fa-user"></i>
-                    <span>Kelola Pemilik</span>
-                </a>
-            </li>
         </ul>
         <!-- End of Sidebar -->
 
@@ -301,7 +294,7 @@
                     <!-- DataTales Example -->
                     <body>   
                         <div class="container">
-                            <form action="{{ route('resto.update', $resto->id) }}" method="POST">
+                            <form action="{{ route('resto.update', $resto->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT')
                                 <input type="hidden" name="id" value="1">

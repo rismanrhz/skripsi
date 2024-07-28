@@ -17,7 +17,7 @@
 @section('content')
 
 <main>
-    <form action="{{ route('daftarresto.store',session('user')->id) }}" method="POST">
+    <form action="{{ route('daftarresto.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <!-- Regis Start -->
         <div class="container-xxl py-5">
@@ -29,13 +29,13 @@
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-6">
                         <div class="wow fadeInUp" data-wow-delay="0.2s">
-                            <form>
                                 <div class="row g-3">
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" name="nama_resto" id="nama_resto" placeholder="Nama Restoran">
-                                            <label for="nama_resto">Nama Restoran</label>
-                                            @error('nama_resto')
+                                            <input type="hidden" name="userid" value="{{session('user')->id}}">
+                                            <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Restoran">
+                                            <label for="nama">Nama Restoran</label>
+                                            @error('nama')
                                                 <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
@@ -55,29 +55,35 @@
                                     </div>
                                     <div class="col-6">
                                         <div class="form-floating">
-                                            <input type="text" class="form-control"  id="jam_buka" placeholder="Jam Buka">
-                                            <label for="jam_buka">Jam Buka <small class="text-danger" style="font-size: 10px">(ex. 07.00 - 18.00)</small></label>
+                                            <input type="text" class="form-control" name="jam" id="jam" placeholder="Jam Buka">
+                                            <label for="jam">Jam Buka <small class="text-danger" style="font-size: 10px">(ex. 07.00 - 18.00)</small></label>
+                                            @error('jam')
+                                                <small class="text-danger">{{ $message }}</small>
+                                            @enderror
                                         </div>
                                     </div>                                    
                                     <div class="col-6">
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="rating" class="form-control" id="rating" placeholder="Rating">
+                                                <input type="text" class="form-control" name="rating" id="rating" placeholder="Rating">
                                                 <label for="rating">Rating<small class="text-danger" style="font-size: 10px"> (ex. 4.8)</small></label>
+                                                @error('rating')
+                                                    <small class="text-danger">{{ $message }}</small>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" name="alamat" id="alamat"></textarea>
-                                            <label for="alamat">Detail Alamat</label>
-                                            @error('alamat')
+                                            <textarea class="form-control" name="detail_alamat" id="detail_alamat"></textarea>
+                                            <label for="detail_alamat">Detail Alamat</label>
+                                            @error('detail_alamat')
                                                 <small class="text-danger">{{ $message }}</small>
                                             @enderror
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                            <label for="jam" class="form-label"> Gambar </label>
+                                            <label for="image" class="form-label"> Gambar </label>
                                             <input type="file" class="form-control" id="image" name="image" >
                                             @error('image')
                                                 <small class="text-danger">{{ $message }}</small>
@@ -87,7 +93,6 @@
                                         <button class="btn btn-primary w-100 py-3" type="submit">Kirim</button>
                                     </div>
                                 </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -95,7 +100,6 @@
             </div>
         </div>
         <!-- Regis End -->
-
-
+    </form>
 </main>
 @endsection

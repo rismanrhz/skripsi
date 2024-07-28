@@ -30,6 +30,28 @@
                             </tr>
                         </thead>
                         <tbody>
+                            @if(session('user')->status == 2)
+                            <tr>
+                                <td>
+                                    <img src="{{asset('resto/'.$resto->image)}}" alt="{{$resto->image}}" width="100%">
+                                </td>
+                                <td>{{ $resto->nama }}</td>
+                                <td>{{ $resto->kecamatan }}</td>
+                                <td>{{ $resto->detail_alamat }}</td>
+                                <td>{{ $resto->jam }}</td>
+                                <td>{{ $resto->rating }}</td>
+                                <td>
+                                    <form onsubmit="return confirm('Are you sure? ');" action="{{ route('resto.destroy', $resto->id) }}" method="POST">
+                                        <a href="{{ route('resto.edit', $resto->id ) }}" class="btn btn-warning" >Ubah</a>
+    
+                                        @csrf
+                                        @method('DELETE')
+    
+                                        <button type="submit" class="btn btn-danger">Hapus</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @else
                             @foreach($resto as $data)
                                 <tr>
                                     <td>
@@ -52,6 +74,7 @@
                                     </td>
                                 </tr>
                             @endforeach
+                            @endif
                         </tbody>
                     </table>
                 </div>

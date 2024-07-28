@@ -70,13 +70,6 @@
                     <span>Kelola Resto</span>
                 </a>
             </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('pemilik')}}">
-                    <i class="fas fa-user"></i>
-                    <span>Kelola Pemilik</span>
-                </a>
-            </li>
         </ul>
         <!-- End of Sidebar -->
 

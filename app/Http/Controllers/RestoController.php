@@ -11,17 +11,23 @@ class RestoController extends Controller
 {
     public function index()
     {
-        $resto = Restoran::all(); 
+        $id = session('user')->id;
+        if (session('user')->status == 2) {
+            $resto = Restoran::where('id_pengguna',$id)->first();
+        }else{
+            $resto = Restoran::all(); 
+        }
         return view('admin/resto', compact('resto'));
     }
 
     public function create()
     {
-        $resto = Restoran::all();
+        //$resto = Restoran::all();
         return view('admin/tambahresto');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string|min:3',
             'kecamatan' => 'required|string',

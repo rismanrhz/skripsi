@@ -33,9 +33,9 @@ Route::get('/restoran', [MenuRestoranController::class, 'index'])->name('menures
 Route::get('/detailresto', [DetailRestoController::class, 'index'])->name('detailresto');
 Route::get('/administrator', [AdminController::class, 'index'])->name('admin');
 
-Route::get('/daftarresto', [DaftarRestoController::class, 'index'])->name('daftarresto');
-Route::post('/daftarresto/{id}', [DaftarRestoController::class, 'store'])->name('daftarresto.store');
-
+Route::get('/daftar_resto', [DaftarrestoController::class, 'index'])->name('daftarresto');
+Route::get('/daftar_resto/create', [DaftarrestoController::class, 'create'])->name('daftarresto.create');
+Route::post('/daftar_resto', [DaftarrestoController::class, 'store'])->name('daftarresto.store');
 
 //Profil
 Route::get('/profil', [ProfilController::class, 'index'])->name('profil');
