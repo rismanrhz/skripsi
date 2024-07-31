@@ -15,6 +15,7 @@ use App\Http\Controllers\PemilikController;
 use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\RestomuController;
 use App\Http\Controllers\DetailRestoController;
+use App\Http\Controllers\MenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,6 +66,11 @@ Route::post('/restaurant/store', [RestoController::class, 'store'])->name('resto
 Route::get('/restaurant/edit/{id}', [RestoController::class, 'edit'])->name('resto.edit');
 Route::put('/restaurant/{id}', [RestoController::class, 'update'])->name('resto.update');
 Route::delete('/restaurant/{id}', [RestoController::class, 'destroy'])->name('resto.destroy');
+
+//Menu(Admin)
+Route::get('/restaurant/menu/{id}', [MenuController::class, 'index'])->name('menu');
+Route::get('/restaurant/menu/create/{id}', [MenuController::class, 'create'])->name('menu.create');
+
 
 //Pemilik (Admin)
 Route::get('/pemilik', [PemilikController::class, 'index'])->name('pemilik');

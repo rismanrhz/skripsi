@@ -17,32 +17,7 @@
 @section('content')
 
 <main>
-    <div class="container-fluid text-center">
-        <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="row g-0">
-                    <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h3 class="section-title ff-secondary text-start text-primary fw-normal">Mau makan apa hari ini?</h3>
-                        <form>    
-                            <div class="form-floating">
-                                <input type="numeric" class="form-control" id="budget" placeholder="Masukkan Budgetmu">
-                                <label for="budget">Masukkan Budgetmu</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="numeric" class="form-control" id="titikx" placeholder="Titik X">
-                                <label for="titikx">Masukkan Lokasimu Berdasarkan Koordinat Titik X</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="numeric" class="form-control" id="titiky" placeholder="Titik Y">
-                                <label for="titiky">Masukkan Lokasimu Berdasarkan Koordinat Titik Y</label>
-                            </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">CARI</button>
-                                </div>
-                        </form>
-                    </div>
-            </div>
-        </div>
-    </div>
+
     
         
 </main>
