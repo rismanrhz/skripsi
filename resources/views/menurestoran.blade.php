@@ -34,7 +34,7 @@
                                 <p class="card-text">{{ $data->detail_alamat }}</p>
                                 <div class="mt-auto d-flex justify-content-between align-items-center">
                                     <span class="text-primary"><i class="bi bi-star-fill"></i> {{ $data->rating }}</span>
-                                    <a href="{{ route('resto', $data->id) }}" class="btn btn-primary">Details</a>
+                                    <a href="{{ route('detailresto', ['id_resto' => $data->id]) }}" class="btn btn-primary">Details</a>
                                 </div>
                             </div>
                         </div>

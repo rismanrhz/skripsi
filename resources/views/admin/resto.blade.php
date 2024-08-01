@@ -48,7 +48,8 @@
                                         @method('DELETE')
     
                                         <button type="submit" class="btn btn-danger">Hapus</button>
-                                        <a href="{{ route('menu', $resto->id ) }}" class="btn btn-primary" >Menu</a>
+                                        <a href="{{ route('menu', $data->id) }}" class="btn btn-primary">Menu</a>
+
                                     </form>
                                 </td>
                             </tr>

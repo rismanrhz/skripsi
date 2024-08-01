@@ -16,7 +16,7 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="restoranTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="menuTable" width="100%" cellspacing="0">
     
                         <thead>
                             <tr>
@@ -24,10 +24,30 @@
                                 <th>Nama Menu</th>
                                 <th>Kategori Menu</th>
                                 <th>Harga</th>
+                                <th>Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
-                            
+                            @foreach($menus as $menu)
+                                <tr>
+                                    <td>
+                                        <img src="{{asset('menu/'.$menu->image)}}" alt="{{$menu->image}}" width="100">
+                                    </td>
+                                    <td>{{ $menu->nama_menu }}</td>
+                                    <td>{{ $menu->kategori_menu }}</td>
+                                    <td>Rp{{ number_format($menu->harga, 0, ',') }}</td>
+                                    <td>
+                                        <form onsubmit="return confirm('Are you sure? ');" action="{{ route('menu.destroy', $menu->id) }}" method="POST">
+                                            <a href="{{ route('menu.edit', $menu->id ) }}" class="btn btn-warning" >Ubah</a>
+        
+                                            @csrf
+                                            @method('DELETE')
+        
+                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach    
                         </tbody>
                     </table>
                 </div>

@@ -59,7 +59,7 @@
                         <a href="{{ route('daftarresto')}}" class="nav-item nav-link">Daftar Resto</a>
                         @endif
                         <a href="{{ route('profil')}}" class="nav-item nav-link">
-                            <img src="img/logo.png" alt="Profil Logo" style="width: 24px; height: 24px;">
+                            <img src="{{asset('img/logo.png')}}" alt="Profil Logo" style="width: 24px; height: 24px;">
                         </a>
                         @endif
                     </div>

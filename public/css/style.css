@@ -481,8 +481,66 @@
     border-right: none;
 }
 
-.card-img-top {
-    width: 100%;
-    height: 300px; /* Atur tinggi sesuai kebutuhan */
-    object-fit: cover; /* Mengatur gambar agar sesuai dengan kontainer */
+.card {
+    width: 100%; /* Lebar card mengikuti lebar kolom */
+    max-width: 250px; /* Maksimal lebar card */
+    margin: 10px auto; /* Margin atas/bawah dan tengah */
+    border: 1px solid #ddd; /* Border card */
+    border-radius: 8px; /* Sudut card membulat */
+    overflow: hidden; /* Menghindari konten keluar dari card */
 }
+
+/* Styling untuk gambar card */
+.card-img-top {
+    width: 100%; /* Lebar gambar mengikuti lebar card */
+    height: 150px; /* Tinggi tetap untuk gambar */
+    object-fit: cover; /* Mengatur gambar agar sesuai ukuran */
+}
+
+.card {
+        width: 100%; /* Lebar card mengikuti lebar kolom */
+        max-width: 250px; /* Maksimal lebar card */
+        margin: 0 auto; /* Mengatur margin kiri dan kanan */
+        border: 1px solid #ddd; /* Border card */
+        border-radius: 8px; /* Sudut card membulat */
+        overflow: hidden; /* Menghindari konten keluar dari card */
+    }
+
+    /* Styling untuk gambar card */
+    .card-img-top {
+        width: 100%; /* Lebar gambar mengikuti lebar card */
+        height: 150px; /* Tinggi tetap untuk gambar */
+        object-fit: cover; /* Mengatur gambar agar sesuai ukuran */
+    }
+
+    /* Styling untuk bagian konten card */
+    .card-body {
+        padding: 0.5rem; /* Padding di dalam card body */
+    }
+
+    .card-title {
+        font-size: 1rem; /* Ukuran font judul */
+        margin-bottom: 0.5rem; /* Jarak bawah judul */
+    }
+
+    .card-text {
+        font-size: 0.875rem; /* Ukuran font deskripsi */
+        margin-bottom: 0.5rem; /* Jarak bawah deskripsi */
+    }
+
+    .btn-primary {
+        font-size: 0.75rem; /* Ukuran font tombol */
+        padding: 0.5rem 0.75rem; /* Padding tombol */
+        border-radius: 4px; /* Sudut tombol membulat */
+    }
+
+    /* Mengurangi margin antara card */
+    .row {
+        margin-left: -10px; /* Mengurangi margin kiri pada row */
+        margin-right: -10px; /* Mengurangi margin kanan pada row */
+    }
+
+    .col-md-4 {
+        padding-left: 10px; /* Menambahkan padding kiri pada kolom */
+        padding-right: 10px; /* Menambahkan padding kanan pada kolom */
+    }

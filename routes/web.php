@@ -31,8 +31,14 @@ use App\Http\Controllers\MenuController;
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/rekomendasi', [RekomendasiController::class, 'index'])->name('rekomendasi');
 Route::get('/restoran', [MenuRestoranController::class, 'index'])->name('menurestoran');
-Route::get('/detailresto', [DetailRestoController::class, 'index'])->name('detailresto');
 Route::get('/administrator', [AdminController::class, 'index'])->name('admin');
+// Menampilkan detail resto
+Route::get('/detailresto/{id_resto}', [DetailRestoController::class, 'index'])->name('detailresto');
+
+// Daftar menu restoran
+// Route::get('test/{id_resto}', [DetailRestoController::class, 'showMenu'])->name('detail');
+
+Route::get('daftarmenu/{id}', [MenuController::class, 'index'])->name('daftarmenu');
 
 Route::get('/daftar_resto', [DaftarrestoController::class, 'index'])->name('daftarresto');
 Route::get('/daftar_resto/create', [DaftarrestoController::class, 'create'])->name('daftarresto.create');
@@ -70,6 +76,10 @@ Route::delete('/restaurant/{id}', [RestoController::class, 'destroy'])->name('re
 //Menu(Admin)
 Route::get('/restaurant/menu/{id}', [MenuController::class, 'index'])->name('menu');
 Route::get('/restaurant/menu/create/{id}', [MenuController::class, 'create'])->name('menu.create');
+Route::post('/restaurant/menu/store/{id}', [MenuController::class, 'store'])->name('menu.store');
+Route::get('/restaurant/menu/edit/{id}', [MenuController::class, 'edit'])->name('menu.edit');
+Route::put('/restaurant/menu/{id}', [MenuController::class, 'update'])->name('menu.update');
+Route::delete('/restaurant/menu/{id}', [MenuController::class, 'destroy'])->name('menu.destroy');
 
 
 //Pemilik (Admin)

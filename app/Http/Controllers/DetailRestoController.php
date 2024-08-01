@@ -3,12 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Menu;
 
 class DetailRestoController extends Controller
 {
-    public function index()
+
+    public function index($id_resto) 
     {
-        return view('detailresto');
+        $menus = Menu::where('id_resto', $id_resto)->get();
+        return view('daftar-menu', compact('menus'));
     }
+
+    
 }
