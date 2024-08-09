@@ -54,7 +54,7 @@
                         <a href="{{ route('rekomendasi')}}" class="nav-item nav-link">Rekomendasi</a>
                         <a href="{{ route('menurestoran')}}" class="nav-item nav-link">Restoran</a>
                         @if(session('user')->status == 2)
-                        <a href="{{ route('resto')}}" class="nav-item nav-link">Kelola Resto</a>
+                        <a href="{{ route('resto') }}" class="nav-item nav-link">Kelola Resto</a>
                         @else
                         <a href="{{ route('daftarresto')}}" class="nav-item nav-link">Daftar Resto</a>
                         @endif

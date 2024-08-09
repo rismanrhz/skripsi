@@ -36,6 +36,7 @@
                                     <span class="text-primary"><i class="bi bi-star-fill"></i> {{ $data->rating }}</span>
                                     <a href="{{ route('detailresto', ['id_resto' => $data->id]) }}" class="btn btn-primary">Details</a>
                                 </div>
+                                <a href="{{ $data->google_maps_link }}" target="_blank" class="btn btn-secondary btn-sm mt-2">Lihat di Google Maps</a>
                             </div>
                         </div>
                     </div>

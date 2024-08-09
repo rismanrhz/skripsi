@@ -28,6 +28,7 @@ class DaftarRestoController extends Controller
             'detail_alamat' => 'required|string',
             'jam' => 'required|string',
             'rating' => 'required|numeric',
+            'google_maps_link' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg',
         ]);
 
@@ -46,6 +47,7 @@ class DaftarRestoController extends Controller
             'jam' => $request->jam,
             'rating' => $request->rating,
             'image' => $imageName,
+            'google_maps_link' => $request->google_maps_link,
         ]);
 
         if($resto){
@@ -63,7 +65,7 @@ class DaftarRestoController extends Controller
     {
         $resto = Restoran::find($id);
 
-        return view('admin.ubahresto', compact('resto'));
+        return view('kelolaresto', compact('resto'));
     }
 
     public function update(Request $request, $id) 
@@ -75,6 +77,7 @@ class DaftarRestoController extends Controller
             'jam' => 'required|string',
             'rating' => 'required|numeric',
             'image' => 'nullable|image|mimes:jpeg,png,jpg',
+            'google_maps_link' => 'required|string',
         ]);
 
         if ($validator->fails()) {
@@ -95,6 +98,7 @@ class DaftarRestoController extends Controller
             'detail_alamat' => $request->detail_alamat,
             'jam' => $request->jam,
             'rating' => $request->rating,
+            'google_maps_link' => $request->google_maps_link,
         ]);
 
         return redirect()->route('daftarresto');

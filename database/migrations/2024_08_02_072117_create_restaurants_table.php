@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('jam');
             $table->double('rating');
             $table->string('image');
+            $table->string('google_maps_link');
             $table->timestamps();
         });
     }

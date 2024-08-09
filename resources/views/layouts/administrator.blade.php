@@ -31,7 +31,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
                 <div class="sidebar-brand-text mx-3">ADMINISTRATOR </div>
             </a>
 
@@ -51,7 +51,7 @@
             <div class="sidebar-heading">
                 Interface
             </div>
-
+            @if(session('user')->id == 3)
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
                 <a class="nav-link collapsed" href="{{ route('pengguna')}}">
@@ -59,6 +59,7 @@
                     <span>Kelola Pengguna</span>
                 </a>
             </li>
+            @endif
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">
@@ -67,6 +68,7 @@
                     <span>Kelola Resto</span>
                 </a>
             </li>
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -96,7 +98,7 @@
                                     Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="{{ route('logout')}}" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

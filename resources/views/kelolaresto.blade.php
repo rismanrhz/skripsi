@@ -3,7 +3,7 @@
 @section('header')
     <div class="container-xxl py-5 bg-dark hero-header mb-5">
         <div class="container text-center my-5 pt-5 pb-4">
-            <h1 class="display-3 text-white mb-3 animated slideInDown">Daftar Resto</h1>
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Kelola Restoran</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
                     <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
@@ -17,14 +17,15 @@
 @section('content')
 
 <main>
-    <form action="{{ route('daftarresto.store') }}" method="POST" enctype="multipart/form-data">
+    <form action="{{ route('daftarresto.update') }}" method="POST" enctype="multipart/form-data">
         @csrf
+        @method('PUT')
         <!-- Regis Start -->
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Daftarkan Restomu</h5>
-                    <h1 class="mb-5">Daftar Resto Baru</h1>
+                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Kelola Restomu</h5>
+                    <h1 class="mb-5">Kelola Restoran</h1>
                 </div>
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-6">

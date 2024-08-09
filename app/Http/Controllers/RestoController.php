@@ -34,6 +34,7 @@ class RestoController extends Controller
             'detail_alamat' => 'required|string',
             'jam' => 'required|string',
             'rating' => 'required|numeric',
+            'google_maps_link' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg',
         ]);
         // dd($request->image);
@@ -53,6 +54,7 @@ class RestoController extends Controller
             'jam' => $request->jam,
             'rating' => $request->rating,
             'image' => $imageName,
+            'google_maps_link' => $request->google_maps_link,
         ]);
 
         return redirect()->route('resto');
@@ -73,7 +75,9 @@ class RestoController extends Controller
             'detail_alamat' => 'required|string',
             'jam' => 'required|string',
             'rating' => 'required|numeric',
+            'google_maps_link' => 'required|string',
             'image' => 'required|image|mimes:jpeg,png,jpg',
+            
         ]);
 
         if ($validator->fails()) {
@@ -91,6 +95,7 @@ class RestoController extends Controller
             'jam' => $request->jam,
             'rating' => $request->rating,
             'image' => $imageName,
+            'google_maps_link' => $request->google_maps_link,
         ]);
         return redirect()->route('resto');
     }

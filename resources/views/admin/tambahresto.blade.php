@@ -31,17 +31,16 @@
                             @error('jam')
                                 <small class="text-danger">{{ $message }}</small>
                             @enderror
-
                         </div>
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="rating" class="form-label">Rating</label>
-                                <input type="number" min="1" max="5" class="form-control" id="rating" name="rating" value="1" >
+                                <input type="number" min="1" max="5" step="0.1" class="form-control" id="rating" name="rating" value="1">
                                 @error('rating')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
-                        </div>
+                        </div>                        
                         <div class="col-md-4">
                             <div class="mb-3">
                                 <label for="kecamatan" class="form-label">Kecamatan</label>
@@ -62,6 +61,17 @@
                                 <label for="detail_alamat" class="form-label"> Detail Alamat </label>
                                 <textarea name="detail_alamat" class="form-control" cols="30" rows="4"></textarea>
                                 @error('detail_alamat')
+                                    <small class="text-danger">{{ $message }}</small>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-3 row">
+                        <div class="col-md-12">
+                            <div class="mb-3">
+                                <label for="google_maps_link" class="form-label">Link Lokasi</label>
+                                <input type="text" class="form-control" id="google_maps_link" name="google_maps_link"  required>
+                                @error('google_maps_link')
                                     <small class="text-danger">{{ $message }}</small>
                                 @enderror
                             </div>
