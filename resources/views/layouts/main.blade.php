@@ -51,7 +51,7 @@
                     <div class="navbar-nav ms-auto py-0 pe-4">
                         <a href="{{ route('dashboard')}}#about" class="nav-item nav-link">Tentang Kami</a>
                         @if(session('user'))
-                        <a href="{{ route('rekomendasi')}}" class="nav-item nav-link">Rekomendasi</a>
+                        <a href="{{ route('recommendationform')}}" class="nav-item nav-link">Rekomendasi</a>
                         <a href="{{ route('menurestoran')}}" class="nav-item nav-link">Restoran</a>
                         @if(session('user')->status == 2)
                         <a href="{{ route('resto') }}" class="nav-item nav-link">Kelola Resto</a>

@@ -17,6 +17,7 @@ use App\Http\Controllers\RestomuController;
 use App\Http\Controllers\DetailRestoController;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AlgoritmaGenetikaController;
+use App\Http\Controllers\GenetikaController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,8 +29,11 @@ use App\Http\Controllers\AlgoritmaGenetikaController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::post('/run-genetic-algorithm', [AlgoritmaGenetikaController::class, 'runAlgorithm']);
+//Route::post('/run-genetic-algorithm', [AlgoritmaGenetikaController::class, 'runAlgorithm']);
+Route::get('/recommendation_form', [AlgoritmaGenetikaController::class, 'recommendationform'])->name('recommendationform');
+Route::post('/recommend', [AlgoritmaGenetikaController::class, 'recommend'])->name('recommend');
 
+Route::get('/rekom', [GenetikaController::class, 'index'])->name('rekom_genetika');
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/rekomendasi', [RekomendasiController::class, 'index'])->name('rekomendasi');
 Route::get('/restoran', [MenuRestoranController::class, 'index'])->name('menurestoran');
@@ -46,8 +50,6 @@ Route::get('daftarmenu/{id}', [MenuController::class, 'index'])->name('daftarmen
 Route::get('/daftar_resto', [DaftarrestoController::class, 'index'])->name('daftarresto');
 Route::get('/daftar_resto/create', [DaftarrestoController::class, 'create'])->name('daftarresto.create');
 Route::post('/daftar_resto', [DaftarrestoController::class, 'store'])->name('daftarresto.store');
-//Route::get('/daftar_resto/edit/{id}', [DaftarrestoController::class, 'edit'])->name('daftarresto.edit');
-//Route::put('/daftar_resto/{id}', [DaftarrestoController::class, 'update'])->name('daftarresto.update');
 
 //Profil
 Route::get('/profil', [ProfilController::class, 'index'])->name('profil');

@@ -10,7 +10,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        if(session('user')->status == 2){
+        $resto = null;
+
+        if(!empty(session('user')) && session('user')->status == 2){
             $id = session('user')->id;
             $resto = Restoran::where('id_pengguna', $id)->first();
             // dd($resto);
