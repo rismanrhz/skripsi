@@ -30,10 +30,9 @@ use App\Http\Controllers\GenetikaController;
 |
 */
 //Route::post('/run-genetic-algorithm', [AlgoritmaGenetikaController::class, 'runAlgorithm']);
-Route::get('/recommendation_form', [AlgoritmaGenetikaController::class, 'recommendationform'])->name('recommendationform');
-Route::post('/recommend', [AlgoritmaGenetikaController::class, 'recommend'])->name('recommend');
+Route::get('/recommendation_form', [GenetikaController::class, 'rekomendasi'])->name('rekomendasi.form');
 
-Route::get('/rekom', [GenetikaController::class, 'index'])->name('rekom_genetika');
+Route::post('/rekom', [GenetikaController::class, 'index'])->name('rekom_genetika');
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/rekomendasi', [RekomendasiController::class, 'index'])->name('rekomendasi');
 Route::get('/restoran', [MenuRestoranController::class, 'index'])->name('menurestoran');

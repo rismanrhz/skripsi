@@ -21,7 +21,7 @@
             <div class="row g-0">
                 <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
                     <h3 class="section-title ff-secondary text-start text-primary fw-normal">Mau makan apa hari ini?</h3>
-                    <form action="{{ route('recommend') }}" method="POST">
+                    <form action="{{ route('rekom_genetika') }}" method="POST">
                         @csrf
                         <div class="form-floating mb-3">
                             <input type="number" class="form-control" id="budget" name="budget" placeholder="Masukkan Budgetmu">
