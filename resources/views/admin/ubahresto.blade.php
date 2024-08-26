@@ -38,7 +38,7 @@
             <div class="col-md-4">
                 <div class="mb-3">
                     <label for="rating" class="form-label">Rating</label>
-                    <input type="number" min="1" max="5" class="form-control" id="rating" name="rating" value="{{ $resto->rating }}" >
+                    <input type="number" min="1" max="5" step="0.1" class="form-control" id="rating" name="rating" value="{{ $resto->rating }}" >
                     @error('rating')
                         <small class="text-danger">{{ $message }}</small>
                     @enderror

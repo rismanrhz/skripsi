@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
-use App\Models\Restaurant;
+use App\Models\Riwayat;
 
 class GenetikaController extends Controller
 {
@@ -15,28 +15,32 @@ class GenetikaController extends Controller
     public function index(Request $request) {
         $budget = $request->budget;
         $kecamatan = $request->kecamatan;
-        // dd($kecamatan);
+        $id_pengguna = session('user')->id;
+        
         // inisialisasi Populasi
         $populasi = $this->inisialisasiPopulasi($budget, $kecamatan);
-        // dd($populasi);
+        
         // evaluasi fitnes
         $fitnessPopulasi = $this->evaluasiFitness($populasi, $budget);
         
         // seleksi orangtua
         $orangtua = $this->seleksiOrangtua($fitnessPopulasi);
-        // dd($orangtua);
 
         //crossover
         $anak = $this->crossover($orangtua);
-        // dd($anak);
+
+        //Mutasi
+        $anak = $this->mutasi($anak);
 
         //Evaluasi Keturunan
         $evaluasiKeturunan = $this->evaluasiKeturunan($anak, $budget);
-        // dd($evaluasiKeturunan);
 
         // Seleksi final
         $recommend = $this->seleksiFinal($evaluasiKeturunan);
         // dd($recommend);
+
+        $riwayat = $this->riwayat($recommend, $id_pengguna, $budget, $kecamatan);
+        // dd($riwayat);
 
         return view('rekomendasi', compact('recommend'));
     }
@@ -139,12 +143,16 @@ class GenetikaController extends Controller
         return $selectedOrangtua;
     }
     
-    public function crossover($orangtua)
+    public function crossover($orangtua, $probabilitasCrossover = 0.5)
     {
         $anak = [];
     
         if (count($orangtua) < 2) {
             return $anak; // Tidak ada crossover jika jumlah orangtua kurang dari 2
+        }
+        if (mt_rand() / mt_getrandmax() > $probabilitasCrossover) {
+            // Tidak melakukan crossover jika nilai acak lebih besar dari probabilitas crossover
+            return $orangtua;
         }
     
         $individu1 = $orangtua[0];
@@ -174,6 +182,22 @@ class GenetikaController extends Controller
         return $validAnak;
     }
         
+    public function mutasi($anak, $probabilitasMutasi = 0.1)
+    {
+        foreach ($anak as &$individu) {
+            foreach ($individu as &$gen) {
+                if (is_array($gen) && isset($gen['harga']) && mt_rand() / mt_getrandmax() < $probabilitasMutasi) {
+                    // Contoh mutasi: mengubah harga secara acak dalam rentang tertentu
+                    $gen['harga'] = $gen['harga'] + rand(-5000, 5000);
+                    // Pastikan harga tidak negatif
+                    $gen['harga'] = max(0, $gen['harga']);
+                }
+            }
+        }
+        return $anak;
+    }
+
+
     public function evaluasiKeturunan($anak, $budget)
     {
         $evaluasiKeturunan = [];
@@ -198,7 +222,7 @@ class GenetikaController extends Controller
         return $evaluasiKeturunan;
     }    
 
-    public function seleksiFinal($evaluasiKeturunan)  
+    public function seleksiFinal($evaluasiKeturunan)
     {
         $bestMenus = [];
         $restaurantSet = [];
@@ -221,10 +245,42 @@ class GenetikaController extends Controller
                 }
             }
         }
-        
-        
         return $bestMenus;
     }
+
+    public function storeRiwayat(Request $request)
+    {
+        $data = $request->input('data'); // Mengambil data dari request
+
+        foreach ($data as $menu) {
+            if (isset($menu['id']) && is_numeric($menu['id'])) {
+                Riwayat::create([
+                    'id_menu' => $menu['id']
+                ]);
+            }
+        }
+
+        // Redirect ke halaman riwayat setelah data disimpan
+        return redirect()->route('riwayat.index');
+    }
+
+    public function riwayat($data, $id_pengguna, $budget, $kecamatan)
+    {
+        $riwayat = [];
+        // dd($data);
+        foreach($data as $menu){
+            $riwayat = Riwayat::create([
+                'id_pengguna' => $id_pengguna,
+                'id_menu' => $menu['id'],
+                'budget' => $budget,
+                'kecamatan' => $kecamatan
+            ]);
+        }
+
+        return $riwayat;
+    }
+    
+
 
     
     

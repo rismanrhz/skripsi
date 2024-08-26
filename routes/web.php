@@ -16,7 +16,7 @@ use App\Http\Controllers\OwnerController;
 use App\Http\Controllers\RestomuController;
 use App\Http\Controllers\DetailRestoController;
 use App\Http\Controllers\MenuController;
-use App\Http\Controllers\AlgoritmaGenetikaController;
+use App\Http\Controllers\RiwayatController;
 use App\Http\Controllers\GenetikaController;
 
 /*
@@ -31,6 +31,9 @@ use App\Http\Controllers\GenetikaController;
 */
 //Route::post('/run-genetic-algorithm', [AlgoritmaGenetikaController::class, 'runAlgorithm']);
 Route::get('/recommendation_form', [GenetikaController::class, 'rekomendasi'])->name('rekomendasi.form');
+
+// Rute untuk menampilkan data riwayat
+Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat');
 
 Route::post('/rekom', [GenetikaController::class, 'index'])->name('rekom_genetika');
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');

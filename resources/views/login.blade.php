@@ -35,7 +35,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                                <img class="img-fluid" src="img/nasgoreng.jpeg" alt="">
+                                <img class="img-fluid" src="img/rawon.jpeg" alt="">
                             </div>
                             <div class="col-lg-6">
                                 <div class="p-5">

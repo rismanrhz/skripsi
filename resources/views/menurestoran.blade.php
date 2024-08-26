@@ -32,6 +32,7 @@
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ $data->nama }}</h5>
                                 <p class="card-text">{{ $data->detail_alamat }}</p>
+                                <p class="card-text"><strong>Jam Buka: </strong>{{ $data->jam }}</p> <!-- Menampilkan jam buka -->
                                 <div class="mt-auto d-flex justify-content-between align-items-center">
                                     <span class="text-primary"><i class="bi bi-star-fill"></i> {{ $data->rating }}</span>
                                     <a href="{{ route('detailresto', ['id_resto' => $data->id]) }}" class="btn btn-primary">Details</a>
