@@ -43,7 +43,7 @@
                                 <td>{{ $resto->detail_alamat }}</td>
                                 <td>{{ $resto->jam }}</td>
                                 <td>{{ $resto->rating }}</td>
-                                <td><a href="{{ $resto->google_maps_link }}">{{ $resto->google_maps_link }}</a> </td>
+                                <td><a href="{{ $resto->google_maps_link }}" class="btn btn-secondary">google maps</a> </td>
                                 <td>
                                     <form onsubmit="return confirm('Are you sure? ');" action="{{ route('resto.destroy', $resto->id) }}" method="POST">
                                         <a href="{{ route('resto.edit', $resto->id ) }}" class="btn btn-warning" >Ubah</a>
@@ -68,7 +68,7 @@
                                     <td>{{ $data->detail_alamat }}</td>
                                     <td>{{ $data->jam }}</td>
                                     <td>{{ $data->rating }}</td>
-                                    <td>{{ $data->google_maps_link }} </td>
+                                    <td><a href="{{ $data->google_maps_link }}" class="btn btn-secondary">google maps</a> </td>
                                     <td>
                                         <form onsubmit="return confirm('Are you sure? ');" action="{{ route('resto.destroy', $data->id) }}" method="POST">
                                             <a href="{{ route('resto.edit', $data->id ) }}" class="btn btn-warning" >Ubah</a>

@@ -23,8 +23,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                    <h5 class="section-title ff-secondary text-center text-primary fw-normal">Daftarkan Restomu</h5>
-                    <h1 class="mb-5">Daftar Resto Baru</h1>
+                    <h2 class="section-title ff-secondary text-center text-primary fw-normal">Daftarkan Restomu Disini</h2> <br> <br>
                 </div>
                 <div class="row g-4 justify-content-center">
                     <div class="col-md-6">

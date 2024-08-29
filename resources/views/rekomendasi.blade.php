@@ -18,9 +18,9 @@
 <main>
     <div class="container-fluid text-center">
         <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
+            <h3 class="section-title ff-secondary text-start text-primary fw-normal">Rekomendasi Menu Makanan dan Minuman</h3>
             <div class="row g-0">
                 <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                    <h3 class="section-title ff-secondary text-start text-primary fw-normal">Rekomendasi Menu Makanan dan Minuman</h3>
                     @if(isset($recommend) && count($recommend) > 0)
                         <div class="row">
                             @foreach($recommend as $menu)

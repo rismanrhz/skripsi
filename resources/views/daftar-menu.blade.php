@@ -6,7 +6,7 @@
             <h1 class="display-3 text-white mb-3 animated slideInDown">Detail Resto</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb justify-content-center text-uppercase">
-                    <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('menurestoran') }}">Restoran</a></li>
                     <li class="breadcrumb-item text-white active" aria-current="page">Daftar Menu</li>
                 </ol>
             </nav>
@@ -18,7 +18,7 @@
 
 <main>
     <div class="container py-5">
-        <h2 class="mb-4">Daftar Menu Makanan</h2>
+        <h2 class="mb-4">{{$resto[0]->nama}}</h2>
 
         @if(isset($menus) && $menus->isNotEmpty())
             <!-- Menu Card Section -->

@@ -10,8 +10,8 @@
     
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row-reverse">
-                {{-- <h6 class=" font-weight-bold text-primary">Tabel Menu</h6> --}}
+            <div class="card-header py-3 d-flex justify-content-between align-items-center">
+                <h6 class=" font-weight-bold">{{$resto[0]->nama}}</h6>
                 <a class="btn btn-primary mb-1" href="{{route('menu.create', $id_resto)}}" role="button">Add</a>
             </div>
             <div class="card-body">

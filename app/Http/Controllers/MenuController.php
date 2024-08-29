@@ -11,8 +11,10 @@ class MenuController extends Controller
 {
     public function index($id) {
         $id_resto = $id;
+        $resto = Restoran::where('id', $id_resto)->get(['nama']);
+        // dd($resto);
         $menus = Menu::where('id_resto', $id_resto)->get();
-        return view('admin/menu', compact('menus', 'id_resto'));
+        return view('admin/menu', compact('menus', 'id_resto', 'resto'));
     }
 
     public function create($id_resto){

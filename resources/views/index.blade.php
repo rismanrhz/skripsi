@@ -7,7 +7,7 @@
                 <div class="col-lg-6 text-center text-lg-start">
                     <h1 class="display-3 text-white animated slideInLeft">Selamat Datang <br>di dunia kuliner Surabaya yang autentik!</h1>
                     <p class="text-white animated slideInLeft mb-4 pb-2">Tentukan keindahan rasa khas di setiap hidangan, dan jelajahi beragam pilihan makanan yang tidak hanya menggoda lidah Anda, tetapi juga bersahabat dengan kantong Anda.</p>
-                    <a href="{{ route('rekomendasi')}}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft ">Cari Rekomendasi</a>
+                    <a href="{{ route('rekomendasi.form')}}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft ">Cari Rekomendasi</a>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                     <img class="img-fluid" src="img/nasgor.png" alt="">
@@ -24,7 +24,7 @@
         <div class="container-xxl py-5">
             <div class="container">
                 <div class="row g-5 align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-6" id="about">
                         <div class="row g-3">
                             <div class="col-6 text-start">
                                 <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.1s" src="img/mie ayam.jpeg">

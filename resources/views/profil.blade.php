@@ -37,36 +37,11 @@
 <main>
     
     <div class="container">
-        <h2 style="text-align:center;">Profil Pribadi</h2>
-        <table>
-            <tr>
-                <th>Informasi</th>
-                <th>Detail</th>
-            </tr>
-            <tr>
-                <td>Nama Depan</td>
-                <td>asdasd</td>
-            </tr>
-            <tr>
-                <td>Nama Belakang</td>
-                <td>asdasd</td>
-            </tr>
-            <tr>
-                <td>Email</td>
-                <td>asdasd</td>
-            </tr>
-            <tr>
-                <td>Password</td>
-                <td>asdasd</td>
-            </tr>
-        </table><br><br>
-    </div>
-
-    <div class="container">
-
         @section('content')
         <div class="container">
-            <h2>Edit Profil</h2>
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h2 class="section-title ff-secondary text-center text-primary fw-normal">Ubah Profil</h2> <br> <br>
+            </div>
 
             @if (session('success'))
                 <div class="alert alert-success">
@@ -93,7 +68,7 @@
                 <div class="form-group">
                     <label for="password">Password:</label>
                     <input type="password" name="password" class="form-control" id="password" value="{{old('password', $pengguna->password) }}" required>
-                </div>  
+                </div>  <br>
                 <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
             </form>
         </div>

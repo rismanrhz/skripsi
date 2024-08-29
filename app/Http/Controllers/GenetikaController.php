@@ -248,22 +248,6 @@ class GenetikaController extends Controller
         return $bestMenus;
     }
 
-    public function storeRiwayat(Request $request)
-    {
-        $data = $request->input('data'); // Mengambil data dari request
-
-        foreach ($data as $menu) {
-            if (isset($menu['id']) && is_numeric($menu['id'])) {
-                Riwayat::create([
-                    'id_menu' => $menu['id']
-                ]);
-            }
-        }
-
-        // Redirect ke halaman riwayat setelah data disimpan
-        return redirect()->route('riwayat.index');
-    }
-
     public function riwayat($data, $id_pengguna, $budget, $kecamatan)
     {
         $riwayat = [];
