@@ -45,21 +45,38 @@
                             @endif
                                 <div class="form-group row">
                                     <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="text" class="form-control form-control-user" id="name" name='nama_depan' placeholder="First Name">
+                                        <input type="text" class="form-control form-control-user" id="name" name='nama_depan' placeholder="Nama Depan">
                                         @error('nama_depan')
-                                        <small class="text-danger">{{ $message }}</small>
+                                            <small class="text-danger">Must be filled</small>
                                         @enderror
                                     </div>
                                     <div class="col-sm-6">
-                                        <input type="text" class="form-control form-control-user" id="name" name='nama_belakang' placeholder="Last Name">
+                                        <input type="text" class="form-control form-control-user" id="name" name='nama_belakang' placeholder="Nama Belakang">
+                                        @error('nama_belakang')
+                                            <small class="text-danger">Must be filled</small>
+                                        @enderror
                                     </div>
                                 </div>
+                                @php
+                                    $email = old('email');
+                                    $emailExists = $email ? \App\Models\User::where('email', $email)->exists() : false;
+                                @endphp
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" id="email" name='email' placeholder="Email Address">
+                                    <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+
+                                    @if($errors->has('email'))
+                                        <small class="text-danger">{{ $errors->first('email') }}</small>
+                                    @elseif($emailExists)
+                                        <small class="text-danger">Must be filled</small>
+                                    @endif
                                 </div>
+
                                 <div class="form-group row">
                                     <div class="col-sm-12">
                                         <input type="password" class="form-control form-control-user" id="Password" name='password' placeholder="Password">
+                                        @error('password')
+                                            <small class="text-danger">Must be filled</small>
+                                        @enderror
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-primary mb-3">Register</button>

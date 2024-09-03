@@ -19,7 +19,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama Depan</label>
-                                        <input type="text" class="form-control" id="name" name="nama_depan" placeholder="Nama Depan" value="Risma" required>
+                                        <input type="text" class="form-control" id="name" name="nama_depan" value="{{ $pengguna->nama_depan }}" required>
                                         @error('nama_depan')
                                             <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -28,7 +28,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="name" class="form-label">Nama Belakang</label>
-                                        <input type="text" class="form-control" id="name" name="nama_belakang" placeholder="Nama Belakang" >
+                                        <input type="text" class="form-control" id="name" name="nama_belakang" value="{{ $pengguna->nama_belakang }}" >
                                         @error('nama_belakang')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -39,7 +39,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="email" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com" >
+                                        <input type="email" class="form-control" id="email" name="email" value="{{ $pengguna->email }}" >
                                         @error('email')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror
@@ -48,7 +48,7 @@
                                 <div class="col-md-6">
                                     <div class="mb-3">
                                         <label for="password" class="form-label">Password</label>
-                                        <input type="password" class="form-control" id="password" name="password" placeholder="Password" >
+                                        <input type="password" class="form-control" id="password" name="password" value="{{ $pengguna->password }}" >
                                         @error('password')
                                         <small class="text-danger">{{ $message }}</small>
                                         @enderror

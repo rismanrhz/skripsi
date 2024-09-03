@@ -10,9 +10,9 @@
     
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
-            <div class="card-header py-3">
+            <div class="card-header py-3 d-flex flex-row-reverse">
                 {{-- <h6 class="m-0 font-weight-bold text-primary">Tabel Pengguna</h6> --}}
-                <a class="btn btn-primary mb-1" href="{{route('pengguna.create')}}" role="button">Add</a>
+                <a class="btn btn-primary mb-1" href="{{route('pengguna.create')}}" role="button">Tambah Data</a>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

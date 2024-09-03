@@ -35,7 +35,7 @@
                                             <input type="text" class="form-control" name="nama" id="nama" placeholder="Nama Restoran">
                                             <label for="nama">Nama Restoran</label>
                                             @error('nama')
-                                                <small class="text-danger">{{ $message }}</small>
+                                                <small class="text-danger">The name field is required.</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -48,7 +48,7 @@
                                             </select>
                                             <label for="kecamatan">Kecamatan</label>
                                             @error('kecamatan')
-                                                <small class="text-danger">{{ $message }}</small>
+                                                <small class="text-danger">The location field is required.</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -57,15 +57,15 @@
                                             <input type="text" class="form-control" name="jam" id="jam" placeholder="Jam Buka">
                                             <label for="jam">Jam Buka <small class="text-danger" style="font-size: 10px">(ex. 07.00 - 18.00)</small></label>
                                             @error('jam')
-                                                <small class="text-danger">{{ $message }}</small>
+                                                <small class="text-danger">The time field is required.</small>
                                             @enderror
                                         </div>
                                     </div>                                    
                                     <div class="col-6">
                                         <div class="col-12">
                                             <div class="form-floating">
-                                                <input type="number" min="1" max="5" step="0.1" class="form-control" id="rating" name="rating" value="">
-                                                <label for="rating" class="form-label">Rating </small></label>
+                                                <input type="number" min="1" max="5" step="0.1" class="form-control" id="rating" name="rating" value="" placeholder="">
+                                                <label for="rating" class="form-label">Rating <small class="text-danger" style="font-size: 10px">(4.8)</small></label>
                                                 @error('rating')
                                                     <small class="text-danger">{{ $message }}</small>
                                                 @enderror
@@ -74,10 +74,10 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <textarea class="form-control" name="detail_alamat" id="detail_alamat"></textarea>
+                                            <textarea class="form-control" name="detail_alamat" id="detail_alamat" placeholder=""></textarea>
                                             <label for="detail_alamat">Detail Alamat</label>
                                             @error('detail_alamat')
-                                                <small class="text-danger">{{ $message }}</small>
+                                                <small class="text-danger">The address field is required.</small>
                                             @enderror
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                                             <input type="text" class="form-control" name="google_maps_link" id="google_maps_link" placeholder="">
                                             <label for="google_maps_link">Lokasi <small class="text-danger" style="font-size: 10px"></small></label>
                                             @error('google_maps_link')
-                                                <small class="text-danger">{{ $message }}</small>
+                                                <small class="text-danger">The location field is required.</small>
                                             @enderror
                                         </div>
                                     </div>    

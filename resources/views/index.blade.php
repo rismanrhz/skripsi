@@ -7,7 +7,12 @@
                 <div class="col-lg-6 text-center text-lg-start">
                     <h1 class="display-3 text-white animated slideInLeft">Selamat Datang <br>di dunia kuliner Surabaya yang autentik!</h1>
                     <p class="text-white animated slideInLeft mb-4 pb-2">Tentukan keindahan rasa khas di setiap hidangan, dan jelajahi beragam pilihan makanan yang tidak hanya menggoda lidah Anda, tetapi juga bersahabat dengan kantong Anda.</p>
+                    @if(session('user'))
                     <a href="{{ route('rekomendasi.form')}}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft ">Cari Rekomendasi</a>
+                    @endif
+                    @if(!session('user'))
+                    <a href="{{ route('login')}}" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft ">Cari Rekomendasi</a>
+                    @endif
                 </div>
                 <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                     <img class="img-fluid" src="img/nasgor.png" alt="">
@@ -154,9 +159,6 @@
             </div>
         </div>
         <!-- Menu End -->
-
-
-       
 
 </main>
 @endsection

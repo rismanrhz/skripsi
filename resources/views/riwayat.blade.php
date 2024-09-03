@@ -20,7 +20,7 @@
         <div class="container-xxl py-5 px-0 wow fadeInUp" data-wow-delay="0.1s">
             <div class="row g-0">
                 <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                    <h3 class="section-title ff-secondary text-start text-primary fw-normal">Riwayat Rekomendasi Anda</h3>
+                    <h3 class="section-title ff-secondary text-start text-primary fw-normal">Riwayat Rekomendasi Anda</h3> <br><br>
                     @if(isset($riwayat) && count($riwayat) > 0)
                         <div class="table-responsive">
                             <table class="table table-striped">

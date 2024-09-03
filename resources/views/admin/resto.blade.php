@@ -13,7 +13,7 @@
             @if(session('user')->status == 3)
             <div class="card-header py-3 d-flex flex-row-reverse">
                 {{-- <h6 class=" font-weight-bold text-primary">Tabel Resto</h6> --}}
-                <a class="btn btn-primary mb-1" href="{{route('resto.create')}}" role="button">Add</a>
+                <a class="btn btn-primary mb-1" href="{{route('resto.create')}}" role="button">Tambah Data</a>
             </div>
             @endif
             <div class="card-body">
@@ -51,7 +51,6 @@
                                         @csrf
                                         @method('DELETE')
     
-                                        <button type="submit" class="btn btn-danger">Hapus</button>
                                         <a href="{{ route('menu', $resto->id) }}" class="btn btn-primary">Menu</a>
 
                                     </form>
